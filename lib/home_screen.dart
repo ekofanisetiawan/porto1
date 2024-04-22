@@ -9,7 +9,30 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: _appBar(context),
-        body: const Center(child: Text('Welcome to The Yokmeet App!')),
+        body: Center(
+            child: TextButton(
+          onPressed: () {
+            showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                      title: Text('Attention!'),
+                      content: Text('Please Upload A New Story'),
+                      actions: <Widget>[
+                        TextButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: Text('Oke'))
+                      ]);
+                });
+          },
+          child: const Text(
+            'Welcome to The Yokmeet App!\n Please Upload A New Story',
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Color(0xFF014D4E)),
+          ),
+        )),
         drawer: _drawer(),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(

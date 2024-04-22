@@ -5,6 +5,19 @@ class AddStoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Column(
+        children: [
+          Center(
+            child: IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.play_arrow),
+              iconSize: 50,
+              color: Color(0xFF014D4E),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
