@@ -16,14 +16,14 @@ class HomeScreen extends StatelessWidget {
                 context: context,
                 builder: (BuildContext context) {
                   return AlertDialog(
-                      title: Text('Attention!'),
-                      content: Text('Please Upload A New Story'),
+                      title: const Text('Attention!'),
+                      content: const Text('Please Upload A New Story'),
                       actions: <Widget>[
                         TextButton(
                             onPressed: () {
                               Navigator.of(context).pop();
                             },
-                            child: Text('Oke'))
+                            child: const Text('Oke'))
                       ]);
                 });
           },
@@ -43,7 +43,7 @@ class HomeScreen extends StatelessWidget {
           },
           backgroundColor: Color.fromARGB(255, 3, 36, 36),
           foregroundColor: Colors.white,
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
         ),
         // bottomNavigationBar: BottomAppBar(
         //     color: Color(0xFF014D4E),
@@ -119,7 +119,7 @@ class HomeScreen extends StatelessWidget {
   AppBar _appBar(BuildContext context) {
     return AppBar(
         // backgroundColor: Color(0xFF014D4E),
-        iconTheme: IconThemeData(color: Color(0xFF014D4E)),
+        iconTheme: const IconThemeData(color: Color(0xFF014D4E)),
         title: const Text(
           'Yokmeet',
           style: TextStyle(

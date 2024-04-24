@@ -5,6 +5,29 @@ class InfoDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    Size screenSize = MediaQuery.of(context).size;
+    Orientation screenOrientation = MediaQuery.of(context).orientation;
+
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              'Screen Size: ${screenSize.width.toStringAsFixed(2)}',
+              style: TextStyle(color: Color(0xFF014D4E), fontSize: 18),
+              textAlign: TextAlign.center,
+            ),
+            Text(
+              'Screen Orientation: $screenOrientation',
+              style: TextStyle(color: Color(0xFF014D4E), fontSize: 18),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
