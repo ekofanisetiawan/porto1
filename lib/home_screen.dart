@@ -9,30 +9,46 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: _appBar(context),
-        body: Center(
-            child: TextButton(
-          onPressed: () {
-            showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return AlertDialog(
-                      title: const Text('Attention!'),
-                      content: const Text('Please Upload A New Story'),
-                      actions: <Widget>[
-                        TextButton(
-                            onPressed: () {
-                              Navigator.of(context).pop();
-                            },
-                            child: const Text('Oke'))
-                      ]);
-                });
+        body: InkWell(
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => AddStoryScreen()));
           },
-          child: const Text(
-            'Welcome to The Yokmeet App!\n Please Upload A New Story',
-            textAlign: TextAlign.center,
-            style: TextStyle(color: Color(0xFF014D4E)),
+          child: Hero(
+            tag: 'image_animation',
+            child: Center(
+                child: Image.asset(
+              'rendang3.png',
+              width: 200,
+              height: 200,
+            )),
           ),
-        )),
+        ),
+
+        // body: Center(
+        //     child: TextButton(
+        //   onPressed: () {
+        //     showDialog(
+        //         context: context,
+        //         builder: (BuildContext context) {
+        //           return AlertDialog(
+        //               title: const Text('Attention!'),
+        //               content: const Text('Please Upload A New Story'),
+        //               actions: <Widget>[
+        //                 TextButton(
+        //                     onPressed: () {
+        //                       Navigator.of(context).pop();
+        //                     },
+        //                     child: const Text('Oke'))
+        //               ]);
+        //         });
+        //   },
+        //   child: const Text(
+        //     'Welcome to The Yokmeet App!\n Please Upload A New Story',
+        //     textAlign: TextAlign.center,
+        //     style: TextStyle(color: Color(0xFF014D4E)),
+        //   ),
+        // )),
         drawer: _drawer(),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
